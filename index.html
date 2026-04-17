@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Card Picker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>🎴 Random Card Picker</h1>
+
+  <select id="count">
+    <option value="1">1 Card</option>
+    <option value="2">2 Cards</option>
+    <option value="3">3 Cards</option>
+    <option value="4">4 Cards</option>
+    <option value="5">5 Cards</option>
+    <option value="6">6 Cards</option>
+    <option value="7">7 Cards</option>
+    <option value="8">8 Cards</option>
+    <option value="9">9 Cards</option>
+    <option value="10">10 Cards</option>
+  </select>
+
+  <label>
+    <input type="checkbox" id="joker"> Include Joker
+  </label>
+
+  <button onclick="drawCards()">Draw</button>
+
+  <div id="cards"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
