@@ -1,38 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Card Picker</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Random Card Picker</title>
+  <link rel="stylesheet" href="styles.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+  <div class="page">
+    <header class="hero">
+      <div class="suit-bar">♠ ♥ ♦ ♣</div>
+      <h1>Random Card Picker</h1>
+      <p>Choose 1–10 cards and add 0, 1 or 2 jokers for a fun, visual draw.</p>
+    </header>
 
-<div class="container">
-  <h1>🎴 Random Card Picker</h1>
-  
-<div class="controls">
-  <select id="count">
-    <option value="1">1 Card</option>
-    <option value="2">2 Cards</option>
-    <option value="3">3 Cards</option>
-    <option value="4">4 Cards</option>
-    <option value="5">5 Cards</option>
-    <option value="6">6 Cards</option>
-    <option value="7">7 Cards</option>
-    <option value="8">8 Cards</option>
-    <option value="9">9 Cards</option>
-    <option value="10">10 Cards</option>
-  </select>
+    <section class="panel">
+      <div class="controls">
+        <label>
+          Draw cards
+          <select id="count" aria-label="Number of cards">
+            <option value="1">1 Card</option>
+            <option value="2">2 Cards</option>
+            <option value="3">3 Cards</option>
+            <option value="4">4 Cards</option>
+            <option value="5">5 Cards</option>
+            <option value="6">6 Cards</option>
+            <option value="7">7 Cards</option>
+            <option value="8">8 Cards</option>
+            <option value="9">9 Cards</option>
+            <option value="10">10 Cards</option>
+          </select>
+        </label>
 
-  <label>
-    <input type="checkbox" id="joker"> Include Joker
-  </label>
+        <label>
+          Jokers
+          <select id="joker-count" aria-label="Number of jokers">
+            <option value="0">No jokers</option>
+            <option value="1">1 joker</option>
+            <option value="2">2 jokers</option>
+          </select>
+        </label>
 
-  <button onclick="drawCards()">Draw</button>
-</div>
-  <div id="cards"></div>
-</div>
+        <button id="draw-button" type="button">Draw cards</button>
+      </div>
 
-<script src="script.js"></script>
+      <div class="status-bar">
+        <div class="status-item"><strong id="deck-size">52</strong> cards in deck</div>
+        <div class="status-item"><strong id="picked-count">0</strong> cards drawn</div>
+        <div class="status-note" id="status-note">Ready to shuffle.</div>
+      </div>
+    </section>
+
+    <main id="cards" class="cards-grid" aria-live="polite"></main>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
